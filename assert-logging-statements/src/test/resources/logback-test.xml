@@ -1,0 +1,11 @@
+<!-- This logging configuration is used when running the test suite even 
+	though logback.xml is present -->
+<configuration>
+	<appender name="static-appender" class="com.bk.logging.StaticAppender" />
+	<appender name="threadsafe-appender" class="com.bk.logging.ThreadSafeAppender" />
+
+	<root level="trace">
+		<appender-ref ref="static-appender" />
+		<appender-ref ref="threadsafe-appender" />
+	</root>
+</configuration>
