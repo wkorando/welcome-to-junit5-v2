@@ -8,6 +8,8 @@ Also be sure to check out the JUnit 5 user docs here: [https://junit.org/junit5/
 
 These projects are also used in the presentation "Welcome to JUnit 5" the slide deck can be viewed here: [http://ibm.biz/welcome-to-junit5](http://ibm.biz/welcome-to-junit5)
 
+For any questions about this project contact Billy Korando either on twitter [@BillyKorando](https://twitter.com/BillyKorando), or via e-mail william.korando[at]ibm[dot]com.
+
 ## Description of Sub-projects
 
 **booking-service:** a Spring Boot application that is used to demonstrate many JUnit 5 features against an application that simulates, at a basic level, a real application.
