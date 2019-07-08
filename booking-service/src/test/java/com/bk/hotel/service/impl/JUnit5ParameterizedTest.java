@@ -12,7 +12,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 public class JUnit5ParameterizedTest {
 
 	@ParameterizedTest
-	@MethodSource("com.bk.hotel.service.impl.JUnit5ParameterizedTest#data")
+	@MethodSource("data")
 	public void verifyDateValidation(DateValidationBean dateValidation) {
 		ReservationServiceImpl service = new ReservationServiceImpl();
 		List<String> errorMsgs = service.verifyReservationDates(dateValidation.checkInDate, dateValidation.checkOutDate);

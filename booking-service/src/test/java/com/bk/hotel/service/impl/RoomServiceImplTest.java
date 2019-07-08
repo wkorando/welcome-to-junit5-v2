@@ -61,8 +61,7 @@ public class RoomServiceImplTest {
 	}
 
 	@Test
-	@DisplayName("A really cool test name!")
-	
+	@DisplayName("A really cool name!")
 	public void testAddRoom() {
 		RoomRepo repo = mock(RoomRepo.class);
 		when(repo.save(any())).thenReturn(new Room(1L, "100", "Single", new BigDecimal(149.99)));
@@ -70,10 +69,11 @@ public class RoomServiceImplTest {
 
 		Room newRoom = service.addRoom(new Room());
 		assertAll(
-		()->assertEquals(2L, newRoom.getId()),
-		()->assertEquals("200", newRoom.getRoomNumber()),
-		()->assertEquals("2ingle", newRoom.getRoomType()),
-		()->assertEquals(new BigDecimal(249.99), newRoom.getRoomRate()));
+		() ->assertEquals(2L, newRoom.getId()),
+		() ->assertEquals("200", newRoom.getRoomNumber()),
+		() ->assertEquals("Dingle", newRoom.getRoomType()),
+		() ->assertEquals(new BigDecimal(249.99), newRoom.getRoomRate())
+		);
 	}
 
 }
