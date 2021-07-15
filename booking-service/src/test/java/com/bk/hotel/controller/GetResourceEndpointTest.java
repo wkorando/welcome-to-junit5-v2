@@ -31,7 +31,7 @@ public interface GetResourceEndpointTest<T, I> extends EndpointTest {
 	default void testExistingResource() throws Exception {
 		mockExistingBehavior().thenReturn(foundResource());
 		getMockMvc().perform(get(baseEndpoint() + "/" + getExistingResource())).andExpect(status().isOk())
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(content().json(getFoundResourceJsonContent()));
 	}
 
@@ -39,7 +39,7 @@ public interface GetResourceEndpointTest<T, I> extends EndpointTest {
 	default void testGetAllResources() throws Exception {
 		mockFindAllResourcesBehavior().thenReturn(Arrays.asList(foundResource()));
 		getMockMvc().perform(get(baseEndpoint())).andExpect(status().isOk())
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(content().json("[" + getFoundResourceJsonContent() + "]"));
 	}
 

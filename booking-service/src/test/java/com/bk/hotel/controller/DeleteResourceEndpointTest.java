@@ -34,7 +34,7 @@ public interface DeleteResourceEndpointTest<I> extends EndpointTest {
 	default void testDeleteNonExistingResource() throws Exception {
 		mockDeleteNonExistingResourceBehavior();
 		getMockMvc().perform(delete(baseEndpoint() + "/" + getNonExistingResoruce())).andExpect(status().isBadRequest())
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(content().json("{ \"errorMessages\" : [" + failedDeleteResourceErrorMessages() + "]}"));
 	}
 }

@@ -22,7 +22,7 @@ import com.bk.hotel.model.Room;
 import com.bk.hotel.service.RoomService;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers = RoomController.class, secure = false)
+@WebMvcTest(controllers = RoomController.class)
 public class RoomControllerTest {
 
 	@Autowired
@@ -35,7 +35,7 @@ public class RoomControllerTest {
 	public void testSuccessfulCallToCustomersSearchByRoomType() throws Exception {
 		when(roomService.findRoomsByType("Single")).thenReturn(Arrays.asList(new Room()));
 		mockMvc.perform(get("/rooms/search?roomType=Single")).andExpect(status().isOk())
-				.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8)).andExpect(jsonPath("$", hasSize(1)));
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$", hasSize(1)));
 	}
 	
 	@Test

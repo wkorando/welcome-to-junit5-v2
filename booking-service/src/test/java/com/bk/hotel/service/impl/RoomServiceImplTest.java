@@ -69,10 +69,10 @@ public class RoomServiceImplTest {
 
 		Room newRoom = service.addRoom(new Room());
 		assertAll(
-		() ->assertEquals(2L, newRoom.getId()),
-		() ->assertEquals("200", newRoom.getRoomNumber()),
-		() ->assertEquals("Dingle", newRoom.getRoomType()),
-		() ->assertEquals(new BigDecimal(249.99), newRoom.getRoomRate())
+		() ->assertEquals(1L, newRoom.getId()),
+		() ->assertEquals("100", newRoom.getRoomNumber()),
+		() ->assertEquals("Single", newRoom.getRoomType()),
+		() ->assertEquals(new BigDecimal(149.99), newRoom.getRoomRate())
 		);
 	}
 

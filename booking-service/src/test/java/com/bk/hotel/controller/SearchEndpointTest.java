@@ -22,7 +22,7 @@ public interface SearchEndpointTest extends EndpointTest {
 	default void testResourcesSearch(SuccessfulSearchScenario successfulSearch) throws Exception {
 		successfulSearch.mockedBehavior();
 		getMockMvc().perform(get(baseEndpoint() + "/search/" + successfulSearch.getSearchQuery()))
-				.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+				.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(content().json(successfulSearch.getJsonResponse()));
 	}
 }

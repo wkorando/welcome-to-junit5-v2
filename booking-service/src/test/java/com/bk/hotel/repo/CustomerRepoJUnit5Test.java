@@ -29,11 +29,11 @@ public class CustomerRepoJUnit5Test {
 	private Customer princess;
 
 	public CustomerRepoJUnit5Test(@Autowired TestEntityManager entityManager, @Autowired CustomerRepo repo) {
-		bojack = new Customer.CustomerBuilder().firstName("BoJack").middleName("Horse").lastName("Horseman")
+		bojack = new Customer.CustomerBuilder().id(1).firstName("BoJack").middleName("Horse").lastName("Horseman")
 				.suffix("Sr.").build();
-		todd = new Customer.CustomerBuilder().firstName("Todd").middleName("Toddifer").lastName("Chavez").suffix("Jr.")
+		todd = new Customer.CustomerBuilder().id(2).firstName("Todd").middleName("Toddifer").lastName("Chavez").suffix("Jr.")
 				.build();
-		princess = new Customer.CustomerBuilder().firstName("Princess").middleName("Cat").lastName("Caroline").build();
+		princess = new Customer.CustomerBuilder().id(3).firstName("Princess").middleName("Cat").lastName("Caroline").build();
 		this.repo = repo;
 		this.entityManager = entityManager;
 	}

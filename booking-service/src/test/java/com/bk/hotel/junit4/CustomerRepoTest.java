@@ -19,7 +19,7 @@ import com.bk.hotel.repo.CustomerRepo;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-@SpringBootTest(classes = HotelApplication.class)
+//@SpringBootTest(classes = HotelApplication.class)
 public class CustomerRepoTest {
 	@Autowired
 	private TestEntityManager entityManager;

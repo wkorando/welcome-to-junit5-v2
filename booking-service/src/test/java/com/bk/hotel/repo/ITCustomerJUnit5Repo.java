@@ -18,6 +18,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.ContextConfiguration;
 import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.utility.DockerImageName;
 
 import com.bk.hotel.HotelApplication;
 import com.bk.hotel.model.Customer;
@@ -39,8 +40,8 @@ public class ITCustomerJUnit5Repo {
 					.applyTo(applicationContext);
 		}
 	}
-
-	private static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres-hoteldb:latest");
+	static DockerImageName postgresHoteldbLatest = DockerImageName.parse("postgres-hoteldb:latest").asCompatibleSubstituteFor("postgres");
+	private static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(postgresHoteldbLatest);
 
 	@RegisterExtension
 	static SpringTestContainersExtension extension = new SpringTestContainersExtension(postgres, true);
